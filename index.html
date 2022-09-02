@@ -1,1 +1,89 @@
-test
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> -->
+    <!-- <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" /> -->
+    <!-- <meta name="description" content="A beautiful alternative to CSS resets &amp; normalisers." /> -->
+
+    <meta charset="utf-8">
+    <meta name="description" content="My description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hammurabi</title>
+    <link rel="stylesheet" href="tacit.css">
+    <link rel="icon" href="scroll.svg"/>
+  </head>
+  <body>
+    <section>
+      <header>
+        <h1><b>Hammurabi</b></h1>
+        <p><b>A Framework for Pluggable, <mark>Logic-Based</mark> X.509 Certificate Validation Policies</b></p>
+        <br>
+        <p>
+        <!-- <a href="" target="_blank"> -->
+          <button>📄 Paper</button>
+        <!-- </a> -->
+        <a href="https://github.com/semaj/hammurabi" target="_blank">
+          <button>💾 Code</button>
+        </a>
+        <a href="#cite">
+          <button>❞ Cite</button>
+        </a>
+        </p>
+      </header>
+      <article>
+        <figure>
+          <img src="scroll.svg" alt="scroll" style="max-height: 50px;"/>
+        </figure>
+        <p>
+        TLS clients (browsers, mobile apps, etc.) verify the identity of servers by <b>validating</b> the server's X.509 certificate during the TLS handshake. Unfortunately, there is no single, authoritative set of rules that dictate whether a certificate is valid or not; rules are drawn from various RFCs and the CA/Browser Forum Baseline Requirements. Furthermore, certain clients like browsers often have their own additional, bespoke validation rules.
+        </p>
+        <p>
+        To make matters worse, the high-level validation rules or <i>policies</i> that describe what constitutes a valid certificate are entangled with low-level validation <i>mechanisms</i> such as certificate parsing, verifying cryptographic signatures, and checking revocation.
+        </p>
+        <p>
+        This entanglement makes it hard to:
+        <ul>
+          <li><b>understand</b> the policy a client implements, and therefore which certificates it will accept</li>
+          <li><b>compare</b> different validation policies</li>
+          <li><b>reuse</b> complex validation policies in multiple clients, which may reduce validation bugs</li>
+        </ul>
+        </p>
+        <p>
+        <b>Hammurabi</b> is a research framework for expressing reusable X.509 certificate validation policies in a high-level policy language (Prolog). Clients pass certificates to the Hammurabi <b>engine</b>, which executes the validation policy and returns the validation result to the client.
+        </p>
+        <p>
+        Hammurabi not only promotes validation policy analysis, comparison, and reuse, but can also be used to bridge the gap between standards and code: certificate validation standards and bespoke requirements can be codified into executable Hammurabi policies.
+        </p>
+        <hr>
+        <h2 id="cite">Hammurabi BibTeX Citation</h2>
+        <pre>
+<code>
+@inproceedings{larisch2022hammurabi,
+  title={Hammurabi: A Framework for Pluggable, Logic-Based X.509 Certificate Validation Policies},
+  author={Larisch, James and Aqeel, Waqar and Lum, Michael and Hanif, Zachary and Goldschlag, Yaelle and Torshizi, Kasra and Kannan, Leah and Wang, Yujie and Chung, Taejoong and Levin, Dave and Maggs, Bruce M. and Mislove, Alan and Parno, Bryan and Wilson, Christo},
+  booktitle={Proceedings of the 2022 ACM SIGSAC Conference on Computer and Communications Security},
+  year={2022}
+}
+</code>
+        </pre>
+        <hr>
+        <h2>Authors</h2>
+        <ul>
+          <li>James Larisch</li>
+          <li>Waqar Aqeel</li>
+          <li>Michael Lum</li>
+          <li>Zachary Hanif</li>
+          <li>Yaelle Goldschlag</li>
+          <li>Kasra Torshizi</li>
+          <li>Leah Kannan</li>
+          <li>Yujie Wang</li>
+          <li>Taejoong Chung</li>
+          <li>Dave Levin</li>
+          <li>Bruce M. Maggs</li>
+          <li>Alan Mislove</li>
+          <li>Bryan Parno</li>
+          <li>Christo Wilson</li>
+        </ul>
+      </article>
+    </section>
+  </body>
