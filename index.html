@@ -19,9 +19,9 @@
         <p><b>A Framework for Pluggable, <mark>Logic-Based</mark> X.509 Certificate Validation Policies</b></p>
         <br>
         <p>
-        <!-- <a href="" target="_blank"> -->
+        <a href="https://jameslarisch.com/pdf/hammurabi.pdf" target="_blank">
           <button>📄 Paper</button>
-        <!-- </a> -->
+        </a>
         <a href="https://github.com/semaj/hammurabi" target="_blank">
           <button>💾 Code</button>
         </a>
@@ -31,11 +31,14 @@
         </p>
       </header>
       <article>
-        <figure>
-          <img src="scroll.svg" alt="scroll" style="max-height: 50px;"/>
-        </figure>
+      <figure>
+        <img src="scroll.svg" alt="scroll" style="max-height: 50px;"/>
+      </figure>
         <p>
-        TLS clients (browsers, mobile apps, etc.) verify the identity of servers by <b>validating</b> the server's X.509 certificate during the TLS handshake. Unfortunately, there is no single, authoritative set of rules that dictate whether a certificate is valid or not; rules are drawn from various RFCs and the CA/Browser Forum Baseline Requirements. Furthermore, certain clients like browsers often have their own additional, bespoke validation rules.
+        <b>Hammurabi is a research project focused on improving the Web PKI.</b>
+        </p>
+        <p>
+        In the Web PKI, TLS clients (browsers, mobile apps, etc.) verify the identity of a server by <b>validating</b> its X.509 certificate during the TLS handshake. Unfortunately, there is no single, authoritative set of rules that dictate whether a certificate is valid or not; rules are drawn from various RFCs and (for web browsers) the CA/Browser Forum Baseline Requirements. Furthermore, specialized clients like web browsers often have their own additional, bespoke validation rules.
         </p>
         <p>
         To make matters worse, the high-level validation rules or <i>policies</i> that describe what constitutes a valid certificate are entangled with low-level validation <i>mechanisms</i> such as certificate parsing, verifying cryptographic signatures, and checking revocation.
@@ -49,19 +52,23 @@
         </ul>
         </p>
         <p>
-        <b>Hammurabi</b> is a research framework for expressing reusable X.509 certificate validation policies in a high-level policy language (Prolog). Clients pass certificates to the Hammurabi <b>engine</b>, which executes the validation policy and returns the validation result to the client.
+        With <b>Hammurabi</b>, certificate validation policies are expressed as high-level logic (Prolog) programs. Clients pass candidate certificates to the Hammurabi <b>engine</b>, which performs basic certificate checks (e.g., signature verification) before executing a validation policy over the certificate chain. Hammurabi returns the validation result to the client.
+        </p>
+        <p>
+        To demonstrate the feasibility of expressing validation policies in Hammurabi, we extracted the certificate validation rules found in both Google Chrome and Mozilla Firefox into Prolog programs. In the paper, we show that our translations produce the same result as the actual browsers for millions of certificates.
         </p>
         <p>
         Hammurabi not only promotes validation policy analysis, comparison, and reuse, but can also be used to bridge the gap between standards and code: certificate validation standards and bespoke requirements can be codified into executable Hammurabi policies.
         </p>
         <hr>
-        <h2 id="cite">Hammurabi BibTeX Citation</h2>
+        <h2 id="cite">BibTeX Citation</h2>
         <pre>
 <code>
 @inproceedings{larisch2022hammurabi,
-  title={Hammurabi: A Framework for Pluggable, Logic-Based X.509 Certificate Validation Policies},
-  author={Larisch, James and Aqeel, Waqar and Lum, Michael and Hanif, Zachary and Goldschlag, Yaelle and Torshizi, Kasra and Kannan, Leah and Wang, Yujie and Chung, Taejoong and Levin, Dave and Maggs, Bruce M. and Mislove, Alan and Parno, Bryan and Wilson, Christo},
+  title={{Hammurabi: A Framework for Pluggable, Logic-Based X.509 Certificate Validation Policies}},
+  author={Larisch, James and Aqeel, Waqar and Lum, Michael and Goldschlag, Yaelle and Torshizi, Kasra and Kannan, Leah and Wang, Yujie and Chung, Taejoong and Levin, Dave and Maggs, Bruce M. and Mislove, Alan and Parno, Bryan and Wilson, Christo},
   booktitle={Proceedings of the 2022 ACM SIGSAC Conference on Computer and Communications Security},
+  month={November},
   year={2022}
 }
 </code>
@@ -69,21 +76,21 @@
         <hr>
         <h2>Authors</h2>
         <ul>
-          <li>James Larisch</li>
-          <li>Waqar Aqeel</li>
-          <li>Michael Lum</li>
-          <li>Zachary Hanif</li>
-          <li>Yaelle Goldschlag</li>
-          <li>Kasra Torshizi</li>
-          <li>Leah Kannan</li>
-          <li>Yujie Wang</li>
-          <li>Taejoong Chung</li>
-          <li>Dave Levin</li>
-          <li>Bruce M. Maggs</li>
-          <li>Alan Mislove</li>
-          <li>Bryan Parno</li>
-          <li>Christo Wilson</li>
+          <li><a target="_blank" href="https://jameslarisch.com/">James Larisch</a> - Harvard University</li>
+          <li><a target="_blank" href="https://waqaraqeel.github.io/">Waqar Aqeel</a> - Duke University</li>
+          <li>Michael Lum - University of Maryland</li>
+          <li>Yaelle Goldschlag - University of Maryland</li>
+          <li>Kasra Torshizi - University of Maryland</li>
+          <li>Leah Kannan - University of Maryland</li>
+          <li>Yujie Wang - University of Maryland</li>
+          <li><a target="_blank" href="https://taejoong.github.io/">Prof. Taejoong Chung</a> - Virginia Tech</li>
+          <li><a target="_blank" href="https://www.cs.umd.edu/~dml/">Prof. Dave Levin</a> - University of Maryland</li>
+          <li><a target="_blank" href="https://users.cs.duke.edu/~bmm/">Prof. Bruce M. Maggs</a>- Duke University and Emerald Innovations</li>
+          <li><a target="_blank" href="https://mislove.org/">Prof. Alan Mislove</a> - Northeastern University</li>
+          <li><a target="_blank" href="https://www.andrew.cmu.edu/user/bparno/">Prof. Bryan Parno</a> - Carnegie Mellon University</li>
+          <li><a target="_blank" href="https://cbw.sh/">Prof. Christo Wilson</a> - Northeastern University</li>
         </ul>
       </article>
     </section>
   </body>
+</html>
